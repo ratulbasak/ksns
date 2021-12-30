@@ -5,8 +5,23 @@ Developed by Ratul (c) 2021
 
 ## Examples of How To Use (Alpha Version)
 
-Creating A Server
+Creating A Build
 
 ```python
 pip3 install --editable .
+```
+
+Run commands
+
+```python
+ksns ➤ python3 -m ksns
+
+Usage: python -m ksns [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  list  List of namespaces in context
+  ns    Switch to another namespace: <namespace_name>
 ```

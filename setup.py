@@ -16,13 +16,14 @@ setup(
     name="ksns",
     version=VERSION,
     py_modules=['ksns'],
+    include_package_data=True,
     author="Ratul Basak",
     author_email="ratulbasak93@gmail.com",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['Click', 'Kubernetes', 'Pyyaml'],
+    install_requires=['click', 'kubernetes', 'pyyaml'],
     entry_points='''
         [console_scripts]
         ksns=ksns.cli:main
