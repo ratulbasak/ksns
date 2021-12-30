@@ -1,0 +1,2 @@
+# ksns
+Switch kubernetes namespace
