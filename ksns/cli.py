@@ -43,7 +43,8 @@ def ns(namespace):
     for i in list_namespaces.items:
         namespace_arr.append(i.metadata.name)
     if namespace not in namespace_arr:
-        print(f'namespace {namespace} not found')
+        click.secho(f"Specified namespace '{namespace}' is not valid.", fg='red', nl=True)
+        raise click.Abort()
     current_namespace = kctx.config['contexts'][0]['context']['namespace']
     with open(kubeconfig) as file:
         getconfig = yaml.load(file, Loader=yaml.FullLoader)
