@@ -16,6 +16,7 @@ class K8s(object):
             if self._configuration_yaml is None:
                 self._configuration_yaml = yaml.load(f, Loader=yaml.CLoader)
         return self._configuration_yaml
+            
 
     @property
     def client(self):
