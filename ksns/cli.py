@@ -48,8 +48,7 @@ def list():
 @main.command()
 @click.argument('namespace', type=str, default='default')
 def ns(namespace):
-    """ Switch to another namespace: <namespace_name> 
-        Use default namespace by default"""
+    """ Switch to another namespace: <namespace_name>"""
     namespace_arr = []
     if not env_kubeconfig:
         kubeconfig = homedir + path_kubeconfig
