@@ -1,4 +1,4 @@
-from ksns import cli, __app_name__
+from ksns import cli
 
 def main():
     cli.main()
