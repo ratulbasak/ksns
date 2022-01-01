@@ -40,7 +40,7 @@ Commands:
   ns    Switch to another namespace: <namespace_name>
 ```
 
-The current namespace color will be green in the output of list namespace.
+The current namespace color you are in will be `yellow` in the output of list namespace.
 
 
 List namespaces

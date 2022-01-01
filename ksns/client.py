@@ -1,3 +1,5 @@
+from typing import Any
+from kubernetes.client.api.core_v1_api import CoreV1Api
 import yaml
 
 from kubernetes import client
@@ -11,15 +13,15 @@ class K8s(object):
         self._configuration_yaml = None
 
     @property
-    def config(self):
+    def config(self) -> Any:
         with open(self.configuration_yaml, 'r') as f:
-            if self._configuration_yaml is None:
+            if not self._configuration_yaml:
                 self._configuration_yaml = yaml.load(f, Loader=yaml.CLoader)
         return self._configuration_yaml
             
 
     @property
-    def client(self):
+    def client(self) -> CoreV1Api:
         k8_loader = kube_config.KubeConfigLoader(self.config)
         call_config = type.__call__(Configuration)
         k8_loader.load_and_set(call_config)

@@ -17,13 +17,13 @@ USAGE:
 
 
 @main.command()
-def list():
+def list() -> None:
     """ List of namespaces in context """
     if not env_kubeconfig:
         kubeconfig = homedir + path_kubeconfig
     else:
         kubeconfig = env_kubeconfig
-    if not (os.path.exists(kubeconfig) and env_kubeconfig):
+    if not os.path.exists(kubeconfig) and not env_kubeconfig:
         click.secho(f"You need to store kubeconfig file in path '{kubeconfig}'", fg='red', nl=True)
         click.secho(f"OR set environment variable via, export KUBECONFIG=<kubeconfig path>", fg='red', nl=True)
         raise click.Abort()
@@ -47,15 +47,16 @@ def list():
 
 @main.command()
 @click.argument('namespace', type=str, default='default')
-def ns(namespace):
+def ns(namespace) -> None:
     """ Switch to another namespace: <namespace_name>"""
     namespace_arr = []
     if not env_kubeconfig:
         kubeconfig = homedir + path_kubeconfig
     else:
         kubeconfig = env_kubeconfig
-    if not os.path.exists(kubeconfig):
-        click.secho(f"kubeconfig not found in path '{kubeconfig}'", fg='red', nl=True)
+    if not os.path.exists(kubeconfig) and not env_kubeconfig:
+        click.secho(f"You need to store kubeconfig file in path '{kubeconfig}'", fg='red', nl=True)
+        click.secho(f"OR set environment variable via, export KUBECONFIG=<kubeconfig path>", fg='red', nl=True)
         raise click.Abort()
 
     try:
