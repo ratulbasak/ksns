@@ -29,12 +29,14 @@ setup(
         [console_scripts]
         ksns=ksns.cli:main
     ''',
+    license='GPL v3 or later',
     keywords=['python', 'kubernetes', 'namespace', 'switch namespace', 'k8s', 'package'],
     classifiers=[
-        "Intended Audience :: Developers",
-        "Programming Language :: Python :: 3.9",
-        "Operating System :: Unix",
-        "Operating System :: MacOS :: MacOS X",
-        "Operating System :: Microsoft :: Windows",
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Programming Language :: Python :: 3.9',
+        'Operating System :: Unix',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: Microsoft :: Windows',
     ]
 )
