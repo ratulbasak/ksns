@@ -5,6 +5,12 @@ Developed by Ratul (c) 2021
 
 ## Examples of How To Use (Alpha Version)
 
+Install from pypi
+
+```python
+pip3 install ksns
+```
+
 Creating A Build
 
 ```python

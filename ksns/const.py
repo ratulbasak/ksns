@@ -2,8 +2,8 @@ from pathlib import Path
 from os import environ
 
 NAMESPACE_STATUS = {
-    'now': '',
-    'previous': ''
+    'now': 'argocd',
+    'previous': 'default'
 }
 
 homedir = str(Path.home())
