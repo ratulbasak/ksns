@@ -40,7 +40,7 @@ def list():
                 fg = 'green'
             click.secho(namespace, fg=fg, nl=True)
 
-        click.secho(f"using config: {kubeconfig}", fg='blue', nl=True)
+        click.secho(f"note: using config: {kubeconfig}", fg='blue', nl=True)
 
     except Exception as error:
         click.secho(f"Caught this error: '{repr(error)}'", fg='red', nl=True)
